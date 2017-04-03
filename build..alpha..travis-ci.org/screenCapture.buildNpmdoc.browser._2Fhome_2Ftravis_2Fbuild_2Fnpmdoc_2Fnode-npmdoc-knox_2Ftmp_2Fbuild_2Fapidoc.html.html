@@ -1,0 +1,493 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/LearnBoost/knox">knox (v0.9.2)</a>
+</h1>
+<h4>Amazon S3 client</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.knox">module knox</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knox.createClient">
+            function <span class="apidocSignatureSpan">knox.</span>createClient
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">knox.</span>auth</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">knox.</span>utils</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">knox.</span>utils.base64</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.knox.auth">module knox.auth</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knox.auth.authorization">
+            function <span class="apidocSignatureSpan">knox.auth.</span>authorization
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knox.auth.canonicalizeHeaders">
+            function <span class="apidocSignatureSpan">knox.auth.</span>canonicalizeHeaders
+            <span class="apidocSignatureSpan">(headers)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knox.auth.canonicalizeResource">
+            function <span class="apidocSignatureSpan">knox.auth.</span>canonicalizeResource
+            <span class="apidocSignatureSpan">(resource)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knox.auth.hmacSha1">
+            function <span class="apidocSignatureSpan">knox.auth.</span>hmacSha1
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knox.auth.queryStringToSign">
+            function <span class="apidocSignatureSpan">knox.auth.</span>queryStringToSign
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knox.auth.sign">
+            function <span class="apidocSignatureSpan">knox.auth.</span>sign
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knox.auth.signQuery">
+            function <span class="apidocSignatureSpan">knox.auth.</span>signQuery
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knox.auth.stringToSign">
+            function <span class="apidocSignatureSpan">knox.auth.</span>stringToSign
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.knox.utils">module knox.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knox.utils.merge">
+            function <span class="apidocSignatureSpan">knox.utils.</span>merge
+            <span class="apidocSignatureSpan">(a, b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">knox.utils.</span>base64</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.knox.utils.base64">module knox.utils.base64</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knox.utils.base64.decode">
+            function <span class="apidocSignatureSpan">knox.utils.base64.</span>decode
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.knox.utils.base64.encode">
+            function <span class="apidocSignatureSpan">knox.utils.base64.</span>encode
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.knox" id="apidoc.module.knox">module knox</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.knox.createClient" id="apidoc.element.knox.createClient">
+        function <span class="apidocSignatureSpan">knox.</span>createClient
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createClient = function (options){
+  return new Client(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## Examples
+
+The following examples demonstrate some capabilities of knox and the S3 REST
+API. First things first, create an S3 client:
+
+```js
+var client = knox.<span class="apidocCodeKeywordSpan">createClient</span>({
+    key: '&lt;api-key-here&gt;'
+  , secret: '&lt;secret-here&gt;'
+  , bucket: 'learnboost'
+});
+```
+
+More options are documented below for features like other endpoints or regions.
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.knox.auth" id="apidoc.module.knox.auth">module knox.auth</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.knox.auth.authorization" id="apidoc.element.knox.auth.authorization">
+        function <span class="apidocSignatureSpan">knox.auth.</span>authorization
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">authorization = function (options){
+  return 'AWS ' + options.key + ':' + exports.sign(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knox.auth.canonicalizeHeaders" id="apidoc.element.knox.auth.canonicalizeHeaders">
+        function <span class="apidocSignatureSpan">knox.auth.</span>canonicalizeHeaders
+        <span class="apidocSignatureSpan">(headers)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">canonicalizeHeaders = function (headers){
+  var buf = []
+    , fields = Object.keys(headers);
+  for (var i = 0, len = fields.length; i &lt; len; ++i) {
+    var field = fields[i]
+      , val = headers[field];
+
+    field = field.toLowerCase();
+
+    if (field.indexOf('x-amz') !== 0 || field === 'x-amz-date') {
+      continue;
+    }
+
+    buf.push(field + ':' + val);
+  }
+
+  var headerSort = function(a, b) {
+    // Headers are sorted lexigraphically based on the header name only.
+    a = a.split(":")[0]
+    b = b.split(":")[0]
+
+    return a &gt; b ? 1 : -1;
+  }
+  return buf.sort(headerSort).join('\n');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knox.auth.canonicalizeResource" id="apidoc.element.knox.auth.canonicalizeResource">
+        function <span class="apidocSignatureSpan">knox.auth.</span>canonicalizeResource
+        <span class="apidocSignatureSpan">(resource)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">canonicalizeResource = function (resource){
+  var url = parse(resource, true)
+    , path = url.pathname
+    , buf = [];
+
+  // apply the query string whitelist
+  Object.keys(url.query).forEach(function (key) {
+      if (whitelist.indexOf(key) != -1) {
+          buf.push(key + (url.query[key] ? "=" + url.query[key] : ''));
+      }
+  });
+
+  return path + (buf.length
+    ? '?' + buf.sort().join('&amp;')
+    : '');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knox.auth.hmacSha1" id="apidoc.element.knox.auth.hmacSha1">
+        function <span class="apidocSignatureSpan">knox.auth.</span>hmacSha1
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hmacSha1 = function (options){
+  return crypto.createHmac('sha1', options.secret).update(new Buffer(options.message, 'utf-8')).digest('base64');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knox.auth.queryStringToSign" id="apidoc.element.knox.auth.queryStringToSign">
+        function <span class="apidocSignatureSpan">knox.auth.</span>queryStringToSign
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">queryStringToSign = function (options){
+  return (options.verb || 'GET') + '\n\n' +
+    (typeof options.contentType !== 'undefined' ?
+      options.contentType : '') + '\n' +
+    options.date + '\n' +
+    (typeof options.extraHeaders !== 'undefined' ?
+      exports.canonicalizeHeaders(options.extraHeaders) + '\n' : '') +
+    (typeof options.token !== 'undefined' ?
+      'x-amz-security-token:' + options.token + '\n' : '') +
+    options.resource;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knox.auth.sign" id="apidoc.element.knox.auth.sign">
+        function <span class="apidocSignatureSpan">knox.auth.</span>sign
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sign = function (options){
+  options.message = exports.stringToSign(options);
+  return exports.hmacSha1(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knox.auth.signQuery" id="apidoc.element.knox.auth.signQuery">
+        function <span class="apidocSignatureSpan">knox.auth.</span>signQuery
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">signQuery = function (options){
+  options.message = exports.queryStringToSign(options);
+  return exports.hmacSha1(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knox.auth.stringToSign" id="apidoc.element.knox.auth.stringToSign">
+        function <span class="apidocSignatureSpan">knox.auth.</span>stringToSign
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stringToSign = function (options){
+  var headers = options.amazonHeaders || '';
+  if (headers) headers += '\n';
+  return [
+      options.verb
+    , options.md5
+    , options.contentType
+    , options.date instanceof Date ? options.date.toUTCString() : options.date
+    , headers + options.resource
+  ].join('\n');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.knox.utils" id="apidoc.module.knox.utils">module knox.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.knox.utils.merge" id="apidoc.element.knox.utils.merge">
+        function <span class="apidocSignatureSpan">knox.utils.</span>merge
+        <span class="apidocSignatureSpan">(a, b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">merge = function (a, b){
+  var keys = Object.keys(b);
+  for (var i = 0, len = keys.length; i &lt; len; ++i) {
+    var key = keys[i];
+    a[key] = b[key]
+  }
+  return a;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.knox.utils.base64" id="apidoc.module.knox.utils.base64">module knox.utils.base64</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.knox.utils.base64.decode" id="apidoc.element.knox.utils.base64.decode">
+        function <span class="apidocSignatureSpan">knox.utils.base64.</span>decode
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decode = function (str){
+  return new Buffer(str, 'base64').toString();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.knox.utils.base64.encode" id="apidoc.element.knox.utils.base64.encode">
+        function <span class="apidocSignatureSpan">knox.utils.base64.</span>encode
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encode = function (str){
+  return new Buffer(str).toString('base64');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
