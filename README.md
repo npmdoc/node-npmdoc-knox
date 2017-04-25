@@ -1,4 +1,7 @@
-# api documentation for  [knox (v0.9.2)](https://github.com/LearnBoost/knox)  [![npm package](https://img.shields.io/npm/v/npmdoc-knox.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-knox) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-knox.svg)](https://travis-ci.org/npmdoc/node-npmdoc-knox)
+# npmdoc-knox
+
+#### basic api documentation for  [knox (v0.9.2)](https://github.com/LearnBoost/knox)  [![npm package](https://img.shields.io/npm/v/npmdoc-knox.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-knox) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-knox.svg)](https://travis-ci.org/npmdoc/node-npmdoc-knox)
+
 #### Amazon S3 client
 
 [![NPM](https://nodei.co/npm/knox.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/knox)
@@ -82,7 +85,8 @@
     "scripts": {
         "test": "mocha"
     },
-    "version": "0.9.2"
+    "version": "0.9.2",
+    "bin": {}
 }
 ```
 
